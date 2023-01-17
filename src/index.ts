@@ -1,8 +1,9 @@
 import express,{Application,Request,Response} from "express"
-const PORT :number = 5000;
+const PORT :number = 3030;
 import "../Config/db"
 import user from "../Routes/UserRouter"
 import taskRoute from "../Routes/TaskRouter"
+import importantTaskRouter from "../Routes/ImportantTaskRoutes";
 
 import cors from "cors"
 
@@ -19,7 +20,8 @@ app.get("/",(req:Request,res:Response)=>{
 
 app.use("/api",user)
 app.use("/api/task",taskRoute)
+app.use("/api/importanttasks",importantTaskRouter)
 app.listen(PORT,()=>{
-    console.log(`Listeninig to ${PORT}`);
+    console.log(` ~ ~ LocalHost is Listeninig to ${PORT} ~ ~`);
     
-})
+}) 

@@ -21,7 +21,7 @@ const GetSingleUser = async(req:Request,res:Response):Promise<Response>=>{
     const singleUser = await UserModel.findById(req.params.id);
 
     return res.status(200).json({
-        message:"Found Successfully",
+        message:"User  Successfully Found",
         data:singleUser,
     })
    } catch (error) {

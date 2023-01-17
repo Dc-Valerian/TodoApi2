@@ -8,10 +8,10 @@ interface UserData{
     email:string;
     password:string;
     myDay:any[]
-    important:taskData[];
-    planned:taskData[]
-    assigned:taskData[]
-    task:any[]
+    important:any[];
+    planned:any[];
+    assigned:any[];
+    task:any[];
   
 }
 

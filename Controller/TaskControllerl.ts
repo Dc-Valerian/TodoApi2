@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 
 
 
-
+// Function to get the Task 
 const getTask  = async (req:Request,res:Response)=>{
 
     await TaskModel.find();
@@ -14,14 +14,14 @@ const getTask  = async (req:Request,res:Response)=>{
     });
 };
 
-
+   
 const CreateTask = async (req:Request,res:Response):Promise<Response>=>{
  try {
     const getUser =await UserModel.findById(req.params.userID);
 
     if(getUser){
         const {title,date}=req.body;
-        let myData= Date.now().toLocaleString();
+        let myData :Date = new Date()
 
         const creatingTask = await TaskModel.create({
             title,

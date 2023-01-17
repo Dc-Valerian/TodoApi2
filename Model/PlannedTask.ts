@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
-import { taskData2 } from "../AllInterface";
 
-interface NewTask extends taskData2,mongoose.Document{}
+import  {taskData2} from "../AllInterface"
 
-const TaskSchema = new mongoose.Schema({
+
+interface   plannedTask  extends taskData2,mongoose.Document{}
+
+const plannedSchema = new mongoose.Schema({
     title:{
         type:String,
     },
@@ -24,7 +26,6 @@ const TaskSchema = new mongoose.Schema({
         ref:"User"
     }
 
-  
 })
 
-export default mongoose.model<NewTask>("tasks",TaskSchema)
+export default mongoose.model<plannedTask>("planned",plannedSchema)
